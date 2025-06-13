@@ -33,14 +33,15 @@ Garage availability
 ## File Structure
 
 .
-├── app.py
-
-├── pune_house_prices.csv
-
-├── README.md
-
+/my-project
+├── app.py / index.js / main.py
 ├── templates/
-│   └── index.html
+├── static/
+├── requirements.txt / package.json
+├── README.md
+└── snapshots/
+    ├── form_submission.png
+    └── response_received.png
 
 
 
