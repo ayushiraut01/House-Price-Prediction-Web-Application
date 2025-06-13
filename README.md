@@ -1,4 +1,4 @@
-# House-Price-Prediction-Web-Application
+# House-Price-Prediction
 
 This is a machine learning-based web application built with Flask that predicts the price of a house in Pune, India, based on user-provided features like area, square footage, bedrooms, bathrooms, year built, and garage availability.
 
