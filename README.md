@@ -32,16 +32,12 @@ Garage availability
 
 ## File Structure
 
+
 .
-/my-project
-├── app.py / index.js / main.py
-├── templates/
-├── static/
-├── requirements.txt / package.json
-├── README.md
-└── snapshots/
-    ├── form_submission.png
-    └── response_received.png
+├── app.py # Main script for scraping
+├── requirements.txt # Required Python packages
+├── restaurants.csv # Sample output file
+└── README.md # Project documentation
 
 
 
