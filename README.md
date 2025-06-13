@@ -33,16 +33,15 @@ Garage availability
 ## File Structure
 
 .
-├── app.py                      # The main Flask application and ML model training/prediction logic
-├── pune_house_prices.csv       # Your dataset for training the model
-├── README.md                   # This documentation file
-├── static/                     # Directory for static files (CSS, JS, Images)
-│   └── images/                 # Contains images used in the web interface
-│       ├── background.jpg      # The full-page background image
-│       └── house_for_prediction.png # The house image displayed in the form
+├── app.py
+├── pune_house_prices.csv
+├── README.md
+├── static/
+│   ├── images/
+│   │   ├── background.jpg
+│   │   └── house_for_prediction.png
 └── templates/
-└── index.html              # The HTML template for the web interface
-
+└── index.html
 
 '''
 
