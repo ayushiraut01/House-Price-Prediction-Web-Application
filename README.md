@@ -30,13 +30,6 @@ Garage availability
 
 
 
-📁 File Structure
-.
-├── app.py                # Main script for scraping
-├── requirements.txt      # Required Python packages
-├── restaurants.csv       # Sample output file
-└── README.md             # Project documentation
-
 
 # Installation
 Clone the Repository or Download:
