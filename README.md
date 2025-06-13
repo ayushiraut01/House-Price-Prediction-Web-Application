@@ -29,10 +29,10 @@ Garage availability
 * **Indian Rupee Formatting**: Displays predicted prices in ₹ (Indian Rupee) format with appropriate comma separators.
 
 # File Structure
+'''
 
-house-price-predictor/
 │
-├── app.py                       # Main Flask app with model training and routing logic
+├── app.py                      # Main Flask app with model training and routing logic
 ├── pune_house_prices.csv       # Dataset containing real estate data in Pune
 │
 ├── templates/
@@ -45,6 +45,7 @@ house-price-predictor/
 ├── requirements.txt            # Python dependencies (
 ├── README.md                   # Project documentation 
 └── venv/       
+'''
 
 # Installation
 Clone the Repository or Download:
