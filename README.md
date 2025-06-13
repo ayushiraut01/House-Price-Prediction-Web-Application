@@ -19,10 +19,113 @@ Year Built
 
 Garage availability
 
- Machine Learning with RandomForestRegressor
- Clean and responsive HTML/CSS web form
- Real-time predictions
- Displays prices in ₹ (Indian Rupees)
- Handles missing or invalid input gracefully
- Dynamic dropdown for area/location
+
+* **Machine Learning Model**: Utilizes `scikit-learn`'s `RandomForestRegressor` for robust price prediction.
+* **Data Preprocessing Pipeline**: Automatically handles missing values (imputation) and categorical features (One-Hot Encoding) using `ColumnTransformer` and `Pipeline`.
+* **Web Interface (Flask)**: Provides an intuitive web form for users to input house details.
+* **Dynamic Location Dropdown**: Populates the "Area" dropdown with **all** existing location entries from the dataset, ensuring the model is trained and predicts on known areas.
+* **Real-time Prediction**: Calculates and displays estimated house prices upon form submission.
+* **Input Validation**: Includes basic validation for user inputs to prevent common errors.
+* **Indian Rupee Formatting**: Displays predicted prices in ₹ (Indian Rupee) format with appropriate comma separators.
+
+# File Structure
+
+house-price-predictor/
+│
+├── app.py                       # Main Flask app with model training and routing logic
+├── pune_house_prices.csv       # Dataset containing real estate data in Pune
+│
+├── templates/
+│   └── index.html              # Web form for user inputs         
+|
+├── screenshots/                # Optional: Form and result snapshots
+│   ├── form_view.png
+│   └── result_view.png
+│
+├── requirements.txt            # Python dependencies (
+├── README.md                   # Project documentation 
+└── venv/       
+
+# Installation
+Clone the Repository or Download:
+
+
+git clone https:https://github.com/ayushiraut01/House-Price-Prediction-Web-Application
+cd pune-house-price-predictor
+Place the Dataset
+Make sure pune_house_prices.csv is in the root directory.
+
+# Set Up Virtual Environment (Recommended):
+
+
+python -m venv venv
+
+source venv/bin/activate       # For Linux/macOS
+.\venv\Scripts\activate        # For Windows
+
+# Install Required Packages:
+
+pip install -r requirements.txt
+
+Or manually:
+
+pip install flask pandas scikit-learn numpy
+ 
+
+# Usage
+Run the Flask App
+
+python app.py
+Visit the Web Page
+
+Go to your browser and open:
+
+
+http://127.0.0.1:5000/
+
+
+# Predict House Price
+
+Fill in all the required fields (Area, Size, Bedrooms, etc.)
+
+Click "Predict Price"
+
+View the result in ₹ format
+
+# Model Details
+Model: RandomForestRegressor from scikit-learn
+
+Pipeline: Includes numeric imputation, one-hot encoding, and training
+
+# Evaluation Metrics:
+
+Mean Absolute Error (MAE)
+
+R² Score
+
+Root Mean Squared Error (RMSE)
+
+# Location Handling
+The area dropdown in the form is dynamically populated using:
+
+
+unique_areas = sorted(df['area'].dropna().unique().tolist())
+Only areas present in the dataset are selectable (e.g., Wagholi, Kharadi, Camp, Shivaji Nagar, Koregaon Park, Viman Nagar, etc.)
+
+# Screenshots
+
+
+Form View: ![image](https://github.com/user-attachments/assets/24db314f-d64c-4b9a-8c9b-ef29d18b020a)
+
+
+
+Result View:
+![image](https://github.com/user-attachments/assets/bca191e5-f014-4036-9e5b-3e5b3cb09f21)
+
+
+
+#  License
+
+This project is open-source and available for free use under the MIT License.
+Feel free to fork, modify, and improve it as needed.
 
