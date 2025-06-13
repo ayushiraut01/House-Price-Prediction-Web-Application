@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+    <style>
+
+
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy2ZqX4JC4Qfr0leqZZ28ZDFOb7Dx0UTZuGw&s') no-repeat center center fixed;
+    
+    background-size: cover;
+    color: #333;
+}
+
+
+.corner-text {
+    position: fixed; /* Positions the text relative to the browser window */
+    bottom: 20px;    /* 20 pixels from the bottom edge */
+    left: 20px;      /* 20 pixels from the LEFT edge */
+    right: auto;     /* Ensures it doesn't conflict with 'left' property */
+    
+    color: #000;     /* --- MODIFIED: Text color changed to BLACK --- */
+    background-color: rgba(247, 241, 241, 0.6); /* --- RE-ENABLED: Semi-transparent dark background for readability --- */
+    padding: 12px 18px; /* Increased padding slightly */
+    border-radius: 8px; /* Rounded corners */
+    
+    font-size: 50px; /* Increased font size */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Changed font family */
+    
+    text-align: left; /* Aligned text to the LEFT */
+    z-index: 1000; /* Ensures the text appears on top of other elements */
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            width: 400px;
+            min-height: 60vh; 
+}
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Ensures padding doesn't increase width */
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            margin-top: 30px;
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="corner-text">
+   **Pune Property Insights** <br>
+        Your trusted source for accurate <br>
+        house price predictions.
+        
+    </div>
+    <div class="container">
+        <h2>🏠 House Price Predictor</h2>
+        <form method="POST">
+            
+      
+            <label for="location">Location</label>
+            <select id="location" name="location" required>
+                {% for loc in locations %}
+                    <option value="{{ loc }}">{{ loc }}</option>
+                {% endfor %}    
+            </select>
+
+
+            <label for="bedrooms">Bedrooms</label>
+            <input type="number" id="bedrooms" name="bedrooms" required min="1">
+
+            <label for="bathrooms">Bathrooms</label>
+            <input type="number" id="bathrooms" name="bathrooms" required min="1">
+
+            <label for="square_footage">Square Footage</label>
+            <input type="number" id="square_footage" name="square_footage" required min="100">
+
+            <label for="garage">Garage (Car Capacity)</label>
+            <input type="number" id="garage" name="garage" required min="0">
+
+            <label for="year_built">Year Built</label>
+            <input type="number" id="year_built" name="year_built" required min="1900" max="{{ current_year }}">
+
+             
+            
+
+            <input type="submit" value="Predict Price">
+        </form>
+
+        {% if prediction %}
+            <div class="result">{{ prediction }}</div>
+        {% endif %}
+    </div>
+    <script>
+        // Set max year for 'Year Built' input to current year
+        document.getElementById('year_built').max = new Date().getFullYear();
+    </script>
+</body>
+</html>
