@@ -51,7 +51,9 @@ Clone the Repository or Download:
 
 
 git clone https:https://github.com/ayushiraut01/House-Price-Prediction-Web-Application
+
 cd pune-house-price-predictor
+
 Place the Dataset
 Make sure pune_house_prices.csv is in the root directory.
 
@@ -60,7 +62,6 @@ Make sure pune_house_prices.csv is in the root directory.
 
 python -m venv venv
 
-source venv/bin/activate       # For Linux/macOS
 .\venv\Scripts\activate        # For Windows
 
 # Install Required Packages:
