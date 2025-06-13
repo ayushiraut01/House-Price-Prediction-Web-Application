@@ -34,8 +34,11 @@ Garage availability
 
 .
 ├── app.py
+
 ├── pune_house_prices.csv
+
 ├── README.md
+
 ├── templates/
 │   └── index.html
 
